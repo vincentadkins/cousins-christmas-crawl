@@ -73,6 +73,9 @@ h1 .ln{display:block}h1 .ch{display:inline-block}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--ink);font:900 17px var(--sans);text-decoration:none;border-radius:40px;padding:15px 28px;box-shadow:0 6px 16px #00000059;transition:transform .15s}
 .cta:active{transform:scale(.96)}
 
+/* snowball fight */
+.scene{margin:-6px 0 18px}.scene svg{display:block;width:100%;height:auto}
+.scap{text-align:center;font:700 13px var(--sans);color:#CFE0D6;margin:8px 16px 0}.scap b{color:var(--gold)}
 /* body cards */
 .body{display:grid;gap:20px;padding:0 16px 28px}
 .card{background:var(--cream);color:var(--ink);border-radius:22px;padding:24px 22px;box-shadow:0 12px 28px #0000004d}
@@ -200,6 +203,95 @@ h2{font:900 28px/1.1 var(--serif);color:var(--pine);margin:0}
   <a class="cta" href="#rsvp">RSVP in 30 seconds <span aria-hidden="true">→</span></a>
 </header>
 
+<section class="scene" aria-label="Two elves and Frosty, a big grey mastiff, having a snowball fight">
+<svg id="fight" viewBox="0 0 400 236" xmlns="http://www.w3.org/2000/svg">
+  <!-- trees -->
+  <g fill="#2F7A59"><path d="M30 170 L52 120 L74 170Z"/><path d="M36 140 L52 98 L68 140Z"/><path d="M350 172 L372 116 L394 172Z"/><path d="M356 142 L372 96 L388 142Z"/></g>
+  <g fill="#FFF7E8" opacity=".9"><path d="M46 112 L52 98 L58 112 Q52 116 46 112Z"/><path d="M366 110 L372 96 L378 110 Q372 114 366 110Z"/></g>
+  <!-- ground -->
+  <path d="M0 178 Q100 160 200 174 T400 170 V236 H0Z" fill="#E6DCC8"/>
+  <path d="M0 186 Q110 170 210 184 T400 180 V236 H0Z" fill="#FFF7E8"/>
+  <!-- elf 2 (behind fort) -->
+  <clipPath id="fortclip"><rect x="0" y="0" width="400" height="190"/></clipPath>
+  <g clip-path="url(#fortclip)"><g>
+    <animateTransform attributeName="transform" type="translate" values="0 30;0 30;0 0;0 0;0 30;0 30" keyTimes="0;.36;.43;.6;.68;1" dur="4s" repeatCount="indefinite"/>
+    <path d="M302 178 Q315 146 328 178Z" fill="#C8313E"/>
+    <rect x="303" y="168" width="24" height="4" fill="#1A1A1A"/><rect x="312" y="167" width="6" height="6" fill="#F2C467"/>
+    <path d="M304 136 l-9 -7 l7 12Z M326 136 l9 -7 l-7 12Z" fill="#F6C9A8"/>
+    <circle cx="315" cy="138" r="11" fill="#F6C9A8"/>
+    <circle cx="311" cy="137" r="1.6" fill="#1D1F21"/><circle cx="319" cy="137" r="1.6" fill="#1D1F21"/>
+    <path d="M311 142 Q315 145 319 142" stroke="#8A4B3A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="308" cy="141" r="2" fill="#F29B9B" opacity=".7"/><circle cx="322" cy="141" r="2" fill="#F29B9B" opacity=".7"/>
+    <path d="M303 132 Q310 106 290 100 L327 130Z" fill="#2E8B57"/><rect x="302" y="128" width="26" height="5" rx="2.5" fill="#FFF7E8"/><circle cx="290" cy="100" r="4" fill="#F2C467"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="20 304 152;20 304 152;80 304 152;-30 304 152;20 304 152;20 304 152" keyTimes="0;.44;.48;.51;.56;1" dur="4s" repeatCount="indefinite"/>
+      <rect x="301" y="150" width="6" height="18" rx="3" fill="#C8313E" transform="rotate(180 304 152)"/><circle cx="304" cy="134" r="3.5" fill="#F6C9A8"/></g>
+  </g></g>
+  <!-- snow fort -->
+  <g fill="#FFF7E8" stroke="#D9CCB0" stroke-width="1.5"><rect x="282" y="162" width="22" height="14" rx="5"/><rect x="304" y="162" width="22" height="14" rx="5"/><rect x="326" y="162" width="22" height="14" rx="5"/><rect x="292" y="174" width="22" height="14" rx="5"/><rect x="314" y="174" width="22" height="14" rx="5"/><rect x="282" y="186" width="22" height="12" rx="5"/><rect x="326" y="186" width="22" height="12" rx="5"/></g>
+  <!-- Frosty -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -16;0 0;0 0" keyTimes="0;.55;.62;.7;1" dur="4s" repeatCount="indefinite"/>
+    <ellipse cx="200" cy="208" rx="40" ry="6" fill="#000" opacity=".12"/>
+    <path d="M230 186 Q258 178 250 150" stroke="#8F969C" stroke-width="9" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-18 230 186;18 230 186;-18 230 186" dur=".45s" repeatCount="indefinite"/></path>
+    <ellipse cx="200" cy="176" rx="36" ry="30" fill="#8F969C"/>
+    <ellipse cx="200" cy="176" rx="19" ry="22" fill="#B9BEC3"/>
+    <rect x="182" y="184" width="12" height="22" rx="5" fill="#8F969C"/><rect x="206" y="184" width="12" height="22" rx="5" fill="#8F969C"/>
+    <ellipse cx="188" cy="205" rx="8" ry="4.5" fill="#B9BEC3"/><ellipse cx="212" cy="205" rx="8" ry="4.5" fill="#B9BEC3"/>
+    <rect x="182" y="146" width="36" height="8" rx="4" fill="#C8313E"/><circle cx="200" cy="156" r="4" fill="#F2C467"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 200 142;0 200 142;-11 200 142;10 200 142;-6 200 142;0 200 142;0 200 142" keyTimes="0;.25;.29;.33;.37;.41;1" dur="4s" repeatCount="indefinite"/>
+      <path d="M170 108 Q154 114 158 144 Q170 144 175 120Z" fill="#6E757B"/>
+      <path d="M230 108 Q246 114 242 144 Q230 144 225 120Z" fill="#6E757B"/>
+      <ellipse cx="200" cy="120" rx="31" ry="27" fill="#8F969C"/>
+      <path d="M190 102 Q200 98 210 102 M192 107 Q200 104 208 107" stroke="#6E757B" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M182 134 Q178 152 190 150 Q196 146 200 140 Q204 146 210 150 Q222 152 218 134 Q200 124 182 134Z" fill="#6E757B"/>
+      <ellipse cx="200" cy="133" rx="16" ry="11" fill="#6E757B"/>
+      <ellipse cx="200" cy="127" rx="7.5" ry="5.5" fill="#1D1F21"/><ellipse cx="197.5" cy="125.5" rx="2.2" ry="1.4" fill="#fff" opacity=".7"/>
+      <circle cx="188" cy="116" r="5.5" fill="#fff"/><circle cx="212" cy="116" r="5.5" fill="#fff"/>
+      <circle cx="190" cy="118" r="2.6" fill="#1D1F21"/><circle cx="210" cy="119" r="2.6" fill="#1D1F21"/>
+      <path d="M182.5 115 A5.5 5.5 0 0 1 193.5 115Z" fill="#8F969C"/><path d="M206.5 115 A5.5 5.5 0 0 1 217.5 115Z" fill="#8F969C"/>
+      <path d="M182 115 H194 M206 115 H218" stroke="#6E757B" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M203 141 Q202 158 208 160 Q214 158 212 141Z" fill="#F28B9B"><animateTransform attributeName="transform" type="rotate" values="-7 207 141;7 207 141;-7 207 141" dur=".6s" repeatCount="indefinite"/></path>
+      <g fill="#fff" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.25;.26;.88;.95;1" dur="4s" repeatCount="indefinite"/>
+        <circle cx="194" cy="96" r="7"/><circle cx="203" cy="94" r="6"/><circle cx="188" cy="101" r="4"/><circle cx="209" cy="99" r="4"/></g>
+    </g>
+  </g>
+  <!-- elf 1 -->
+  <g>
+    <path d="M70 176 l-3 14 h-9 q-4 0 -2 -3 Z M80 176 l3 14 h9 q4 0 2 -3 Z" fill="#3B2A20"/>
+    <path d="M62 180 Q75 142 88 180Z" fill="#2E8B57"/>
+    <rect x="63" y="170" width="24" height="4" fill="#1A1A1A"/><rect x="72" y="169" width="6" height="6" fill="#F2C467"/>
+    <path d="M64 136 l-9 -7 l7 12Z M86 136 l9 -7 l-7 12Z" fill="#F6C9A8"/>
+    <circle cx="75" cy="138" r="11" fill="#F6C9A8"/>
+    <circle cx="71" cy="137" r="1.6" fill="#1D1F21"/><circle cx="79" cy="137" r="1.6" fill="#1D1F21"/>
+    <path d="M71 142 Q75 146 79 142" stroke="#8A4B3A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="68" cy="141" r="2" fill="#F29B9B" opacity=".7"/><circle cx="82" cy="141" r="2" fill="#F29B9B" opacity=".7"/>
+    <path d="M63 132 Q70 106 96 98 L87 130Z" fill="#C8313E"/><rect x="62" y="128" width="26" height="5" rx="2.5" fill="#FFF7E8"/><circle cx="96" cy="98" r="4" fill="#FFF7E8"/>
+    <rect x="60" y="150" width="6" height="16" rx="3" fill="#2E8B57" transform="rotate(20 63 150)"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="40 86 152;-75 86 152;40 86 152;40 86 152" keyTimes="0;.06;.2;1" dur="4s" repeatCount="indefinite"/>
+      <rect x="83" y="134" width="6" height="18" rx="3" fill="#2E8B57"/><circle cx="86" cy="133" r="3.5" fill="#F6C9A8"/></g>
+    <g fill="#fff" opacity="0"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.78;.79;.9;1" dur="4s" repeatCount="indefinite"/>
+      <circle cx="78" cy="112" r="6"/><circle cx="86" cy="108" r="4"/><circle cx="70" cy="110" r="3.5"/></g>
+  </g>
+  <!-- snowball A: elf 1 -> Frosty -->
+  <circle r="5.5" fill="#fff" stroke="#D9CCB0" stroke-width="1">
+    <animateMotion path="M90 132 Q140 60 196 100" keyPoints="0;1;1" keyTimes="0;.25;1" calcMode="linear" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.25;.26;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <!-- poof on Frosty -->
+  <g fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.25;.26;.38;1" dur="4s" repeatCount="indefinite"/>
+    <path d="M196 86 v-10 M182 92 l-8 -6 M210 92 l8 -6 M178 104 h-10 M214 104 h10"/>
+  </g>
+  <!-- snowball B: elf 2 -> elf 1 (Frosty jumps for it) -->
+  <circle r="5.5" fill="#fff" stroke="#D9CCB0" stroke-width="1" opacity="0">
+    <animateMotion path="M304 132 Q190 40 80 112" keyPoints="0;0;1;1" keyTimes="0;.5;.78;1" calcMode="linear" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.49;.5;.78;.79;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+<p class="scap">Live from the North Pole: <b>Frosty 0</b> · <b>Elves 47</b> 🐾</p>
+</section>
+
 <main class="body">
 <section class="card reveal" id="pass">
   <div class="phead"><h2>The Crawl Pass</h2><span class="tag">3 STOPS</span></div>
@@ -291,6 +383,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root=document.documentElement,body=document.body;
 body.classList.add('js');
+if(RM){try{$('#fight').pauseAnimations()}catch(e){}}
 $('#lights').innerHTML='<i class="bulb"></i>'.repeat(16);
 let li=0;$$('h1 .ln').forEach(ln=>{ln.innerHTML=[...ln.textContent].map(c=>`<span class="ch" style="--i:${li++}">${c}</span>`).join('')});
 
