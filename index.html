@@ -2,321 +2,229 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b1f19">
-<title>Cousins Christmas Bar Crawl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071510">
+<title>Amber's Cousins Christmas Crawl</title>
 <meta name="description" content="Sat Dec 5 · 6 PM · Amici's → Brew Garden → Johnny J's. Ugly Christmas sweater REQUIRED. Tap to RSVP!">
-<meta property="og:title" content="🎄 Cousins Christmas Bar Crawl">
+<meta property="og:title" content="🎄 Amber's Cousins Christmas Crawl">
 <meta property="og:description" content="Sat Dec 5 · 6 PM · 3 stops · Ugly sweater REQUIRED. Tap to RSVP!">
 <meta property="og:image" content="https://vincentadkins.github.io/cousins-christmas-crawl/og.jpg">
-<meta property="og:image:width" content="800"><meta property="og:image:height" content="420">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vincentadkins.github.io/cousins-christmas-crawl/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="apple-touch-icon" href="og.jpg">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Cousins Crawl">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,900;1,9..144,600;1,9..144,900&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* VOICE: loud, warm family-party invite — tacky on purpose, but finished.
-   IDEA: a wrapped present that opens into a night out: carols on, snow falling, sleigh on the route.
-   PICTURE: the unwrapping gift, then a snowy route map with a sleigh riding between the three bars.
-   COLOUR and TYPE: the invite's own pine, sweater red, tinsel gold, snow cream; Mountains of Christmas + Nunito.
-   LAYOUT: one column of panels under a sticky string of lights; jukebox near the top. */
-:root{color-scheme:dark;--pine:#12382d;--pine2:#1d5140;--deep:#0b1f19;--red:#b52e38;--red2:#8a1f29;--gold:#f4ca72;--cream:#fff8e9;--ink:#17352b;--mute:#52635b;--beat:0}
+:root{color-scheme:dark;--pine:#0F2E24;--pine2:#173F32;--deep:#08201A;--red:#C8313E;--gold:#F2C467;--cream:#FFF7E8;--ink:#14322A;--mute:#56685F;--line:#E6D9BD;--beat:0;--serif:'Fraunces',Georgia,serif;--sans:'Nunito',system-ui,sans-serif}
 *{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 50% -10%,#1f5a44 0%,#0f2c23 45%,#08180f 100%) fixed;color:var(--cream);font:16px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip}
-#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
-button{font:inherit;cursor:pointer}
+html{scroll-behavior:smooth;background:#071510}
+body{margin:0;background:var(--pine);color:var(--cream);font:16px/1.5 var(--sans);overflow-x:clip}
+button{font:inherit;cursor:pointer;color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+[hidden]{display:none!important}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+.app{max-width:460px;margin:0 auto;background:var(--pine);min-height:100vh;position:relative;box-shadow:0 0 80px #0009}
 
 /* lights */
-.lights{height:30px;display:flex;justify-content:space-around;align-items:flex-start;padding:0 6px;background:#071510;position:sticky;top:0;z-index:5;border-bottom:2px solid #1c3a2f}
-.lights:before{content:"";position:absolute;left:0;right:0;top:3px;height:2px;background:#2b4a3e}
-.bulb{width:11px;height:16px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;margin-top:6px;display:block;position:relative;box-shadow:0 0 calc(10px + var(--beat)*22px) currentColor;animation:twinkle 1.6s infinite alternate;filter:brightness(calc(.85 + var(--beat)*.9))}
-.bulb:before{content:"";position:absolute;width:5px;height:5px;background:#5d6b64;top:-4px;left:3px;border-radius:1px}
-.bulb:nth-child(4n+1){color:#ff4b58;background:#ff4b58}.bulb:nth-child(4n+2){color:#f5d36b;background:#f5d36b;animation-delay:.4s}.bulb:nth-child(4n+3){color:#54d89a;background:#54d89a;animation-delay:.8s}.bulb:nth-child(4n){color:#65baff;background:#65baff;animation-delay:1.1s}
-@keyframes twinkle{to{opacity:.5}}
+.lights{position:sticky;top:0;z-index:5;height:34px;background:#071510;display:flex;justify-content:space-around;align-items:flex-start;padding:0 4px;padding-top:env(safe-area-inset-top)}
+.lights:before{content:"";position:absolute;left:0;right:0;top:5px;height:2px;background:#2B4A3E}
+.bulb{width:11px;height:16px;margin-top:10px;border-radius:50%/55% 55% 45% 45%;position:relative;box-shadow:0 0 calc(10px + var(--beat)*22px) currentColor;animation:tw 1.6s infinite alternate;filter:brightness(calc(.9 + var(--beat)*.8))}
+.bulb:before{content:"";position:absolute;width:5px;height:5px;background:#5D6B64;top:-4px;left:3px;border-radius:1px}
+.bulb:nth-child(4n+1){color:#FF4B58;background:#FF4B58}.bulb:nth-child(4n+2){color:#F5D36B;background:#F5D36B;animation-delay:.4s}.bulb:nth-child(4n+3){color:#54D89A;background:#54D89A;animation-delay:.8s}.bulb:nth-child(4n){color:#65BAFF;background:#65BAFF;animation-delay:1.1s}
+@keyframes tw{to{opacity:.5}}
 
 /* gift intro */
-#gift{position:fixed;inset:0;z-index:10;display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 42%,#225e47 0%,#0d261e 55%,#06130e 100%);transition:opacity .9s ease,visibility .9s}
+#gift{position:fixed;inset:0;z-index:10;display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 42%,#2C6B50,#0F2E24 55%,#06130E);transition:opacity .9s,visibility .9s}
 #gift.gone{opacity:0;visibility:hidden}
+.gk{font:italic 900 26px var(--serif);color:var(--gold);margin:0 0 14px}
 .giftbtn{background:none;border:0;padding:0;position:relative;display:block;margin:0 auto}
-.giftbtn svg{width:min(270px,62vw);height:auto;overflow:visible;animation:wiggle 2.6s ease-in-out infinite;filter:drop-shadow(0 18px 24px #0008)}
-@keyframes wiggle{0%,70%,100%{transform:rotate(0)}75%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}85%{transform:rotate(-3deg)}90%{transform:rotate(2deg)}}
+.giftbtn svg{width:min(250px,60vw);height:auto;overflow:visible;animation:wig 2.6s ease-in-out infinite;filter:drop-shadow(0 18px 24px #0008)}
+@keyframes wig{0%,70%,100%{transform:rotate(0)}75%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}85%{transform:rotate(-3deg)}90%{transform:rotate(2deg)}}
 #lid{transform-box:fill-box;transform-origin:center;transition:transform .8s cubic-bezier(.3,1.4,.5,1),opacity .8s}
-.open #lid{transform:translate(40px,-190px) rotate(28deg);opacity:0}
-.open svg{animation:none}
-.glow{position:absolute;left:50%;top:40%;width:20px;height:20px;border-radius:50%;background:radial-gradient(#fff6d0,#f4ca7200 70%);transform:translate(-50%,-50%) scale(0);transition:transform .9s ease-out,opacity .9s;pointer-events:none}
+.open #lid{transform:translate(40px,-190px) rotate(28deg);opacity:0}.open svg{animation:none}
+.glow{position:absolute;left:50%;top:40%;width:20px;height:20px;border-radius:50%;background:radial-gradient(#fff6d0,#f2c46700 70%);transform:translate(-50%,-50%) scale(0);transition:transform .9s ease-out,opacity .9s;pointer-events:none}
 .open .glow{transform:translate(-50%,-50%) scale(40);opacity:0}
-.gift-k{font:900 13px Nunito,sans-serif;letter-spacing:.18em;color:var(--gold);margin:0 0 18px}
-.gift-t{font:700 clamp(34px,7vw,52px)/1.05 'Mountains of Christmas',Georgia,serif;margin:22px 0 6px}
-.gift-s{color:#d9e6dc;margin:0 0 18px}
+.gt{font:900 clamp(30px,8vw,40px)/1.05 var(--serif);margin:22px 0 6px}
+.gs{color:#d9e6dc;margin:0 0 10px}
 .quiet{background:none;border:0;color:#cfe0d6;text-decoration:underline;font-size:14px;min-height:44px}
 
-/* layout */
-.wrap{max-width:880px;margin:auto;padding:22px 16px 110px;position:relative;z-index:1}
-.panel{background:var(--cream);color:var(--ink);border-radius:20px;padding:24px;margin:20px 0;box-shadow:0 14px 30px #0005}
-h2{font:700 clamp(28px,5vw,38px)/1.05 'Mountains of Christmas',Georgia,serif;margin:0 0 14px;color:var(--pine);text-wrap:balance}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,1.2,.4,1)}
-.reveal.in{opacity:1;transform:none}
-
 /* hero */
-.hero{text-align:center;padding:34px 16px 28px;background:radial-gradient(ellipse at top,#2c6b50 0%,#12382d 58%,#0d241d 100%);border:1px solid #b9904d;border-radius:24px;position:relative;overflow:hidden;box-shadow:0 20px 40px #0007}
-.kicker{font:900 12px Nunito,sans-serif;letter-spacing:.2em;color:var(--gold)}
-h1{font:700 clamp(44px,10.5vw,92px)/.95 'Mountains of Christmas',Georgia,serif;margin:14px 0 12px;color:var(--cream);text-shadow:0 5px 0 #7c1f2a,0 0 30px #ffd76a40}
-h1 .ln{display:block}
-h1 .ch{display:inline-block}
-.js h1 .ch{opacity:0}
-.go h1 .ch{animation:drop .8s cubic-bezier(.2,1.5,.4,1) both;animation-delay:calc(var(--i)*55ms)}
+.hero{text-align:center;padding:36px 22px 38px;background:radial-gradient(ellipse 90% 70% at 50% 0%,#2C6B50 0%,var(--pine) 65%);display:grid;justify-items:center;gap:14px}
+.host{font:italic 900 34px/1 var(--serif);color:var(--gold);margin:0}
+h1{font:900 clamp(52px,16.5vw,68px)/.88 var(--serif);letter-spacing:-.02em;margin:0;color:var(--cream);text-shadow:0 5px 0 #7C1F2A,0 0 40px #ffd76a33}
+h1 .ln{display:block}h1 .ch{display:inline-block}
+.js h1 .ch,.js .host{opacity:0}
+.go h1 .ch{animation:drop .8s cubic-bezier(.2,1.5,.4,1) both;animation-delay:calc(200ms + var(--i)*45ms)}
+.go .host{animation:fade .8s both}
 @keyframes drop{from{opacity:0;transform:translateY(-70px) rotate(-14deg) scale(.6)}to{opacity:1;transform:none}}
-.go h1 .ch:hover{animation:jig .5s}
-@keyframes jig{50%{transform:translateY(-10px) rotate(8deg)}}
-.subtitle{font:900 13px Nunito,sans-serif;letter-spacing:.14em;color:#f9e8c2}
-.date{display:inline-block;margin-top:18px;padding:10px 18px;border:1px solid var(--gold);border-radius:30px;color:var(--gold);font:900 14px Nunito,sans-serif;white-space:nowrap;box-shadow:0 0 calc(var(--beat)*24px) #f4ca7299}
-.count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:440px;margin:22px auto 4px}
-.tile{background:#081a14;border:1px solid #2e5a48;border-radius:12px;padding:10px 4px 6px}
-.tile b{display:block;font:900 clamp(26px,6vw,38px)/1 Nunito,sans-serif;color:var(--cream);font-variant-numeric:tabular-nums}
-.tile b.flip{animation:flip .45s}
-@keyframes flip{0%{transform:rotateX(90deg);color:var(--gold)}100%{transform:none}}
-.tile small{font-size:13px;color:#a9c4b6}
-.countnote{font-size:14px;color:#cfe0d6;margin:8px 0 0}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.sub{font:700 14px var(--sans);color:#F9E8C2;margin:0}
+.stub{border:1.5px dashed var(--gold);border-radius:30px;padding:10px 18px;color:var(--gold);font:900 15px var(--sans);letter-spacing:.04em;white-space:nowrap;box-shadow:0 0 calc(var(--beat)*24px) #f2c46799}
+.count{display:grid;grid-template-columns:repeat(4,74px);gap:10px;justify-content:center}
+.tile{background:var(--deep);border:1px solid #2E5A48;border-radius:14px;padding:12px 4px 10px;display:grid;gap:2px}
+.tile b{font:900 30px/1 var(--sans);color:var(--cream);font-variant-numeric:tabular-nums}
+.tile b.flip{animation:flip .45s}@keyframes flip{0%{transform:rotateX(90deg);color:var(--gold)}100%{transform:none}}
+.tile small{font:700 12px var(--sans);color:#A9C4B6}
+.cnote{font-size:14px;color:#CFE0D6;margin:0}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--ink);font:900 17px var(--sans);text-decoration:none;border-radius:40px;padding:15px 28px;box-shadow:0 6px 16px #00000059;transition:transform .15s}
+.cta:active{transform:scale(.96)}
 
-/* jukebox */
-.juke{background:linear-gradient(160deg,#173f32,#0e2a21);color:var(--cream);border:1px solid #d2ad63}
-.juke h2{color:var(--gold)}
-.jgrid{display:grid;grid-template-columns:170px minmax(0,1fr);gap:22px;align-items:center}
-.record{width:170px;height:170px;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 2px,#1d1d1d 2px 4px);position:relative;box-shadow:0 10px 24px #0008,inset 0 0 0 6px #0b0b0b;animation:spin 3s linear infinite;animation-play-state:paused}
-.record:after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 30deg,#fff0 0 10%,#ffffff22 14%,#fff0 20% 60%,#ffffff18 64%,#fff0 70%)}
-.label{position:absolute;inset:34%;border-radius:50%;background:radial-gradient(circle,#081a14 0 8%,var(--red) 9% 100%);display:grid;place-items:center;font:700 13px 'Mountains of Christmas',serif;color:var(--gold);text-align:center;line-height:1}
-.playing .record{animation-play-state:running}
-@keyframes spin{to{transform:rotate(360deg)}}
-.now{font-size:14px;color:#a9c4b6;margin:0}
-.title{font:700 clamp(26px,5vw,34px)/1.1 'Mountains of Christmas',serif;color:var(--cream);margin:2px 0 2px}
-.credit{font-size:13px;color:#a9c4b6;margin:0 0 10px}
-#viz{width:100%;height:56px;display:block;margin:4px 0 10px}
-.ctrls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.btn{border:0;border-radius:30px;min-height:44px;padding:11px 20px;background:var(--gold);color:var(--ink);font:900 15px Nunito,sans-serif;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s}
-.btn:active{transform:scale(.95)}
-.btn.ghost{background:transparent;border:1px solid #f5d58c;color:#f5d58c}
-.btn.round{width:48px;padding:0}
-.btn.dark{background:var(--pine);color:#fff}
-.tracks{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.tracks button{border:1px solid #2e5a48;background:#0a2019;color:#d9e6dc;border-radius:20px;padding:8px 14px;min-height:40px;font-size:14px}
-.tracks button.on{background:var(--red);border-color:var(--red);color:#fff}
-.tiny{font-size:13px;color:#a9c4b6;margin:12px 0 0}
+/* body cards */
+.body{display:grid;gap:20px;padding:0 16px 28px}
+.card{background:var(--cream);color:var(--ink);border-radius:22px;padding:24px 22px;box-shadow:0 12px 28px #0000004d}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s cubic-bezier(.2,1.2,.4,1)}.reveal.in{opacity:1;transform:none}
+h2{font:900 28px/1.1 var(--serif);color:var(--pine);margin:0}
+.lead{color:var(--mute);margin:6px 0 0;font-size:15px}
+.phead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag{background:var(--red);color:#fff;font:900 11px var(--sans);letter-spacing:.08em;border-radius:8px;padding:5px 10px;white-space:nowrap}
+.stops{margin-top:8px}
+.stop{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:14px 0;border-top:2px dashed var(--line)}
+.stop:first-child{border-top:0}
+.badge{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:900 18px var(--sans);color:#fff;background:var(--pine)}
+.stop:nth-child(2) .badge{background:var(--red)}.stop:nth-child(3) .badge{background:var(--gold);color:var(--ink)}
+.stop .t{font:800 12px var(--sans);color:var(--red);letter-spacing:.06em}
+.stop h3{font:900 24px/1.1 var(--serif);margin:1px 0 2px}
+.stop p{margin:0 0 3px;color:var(--mute);font-size:14px}
+.stop a{font:800 13px var(--sans);color:var(--red);text-decoration:none}
+.row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.btn{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 18px;border-radius:30px;font:900 14px var(--sans);text-decoration:none;border:2px solid transparent;transition:transform .15s;white-space:nowrap}
+.btn:active{transform:scale(.96)}
+.btn.dark{background:var(--pine);color:#fff}.btn.out{background:transparent;border-color:var(--pine);color:var(--pine)}.btn.gold{background:var(--gold);color:var(--ink)}.btn.goldout{background:transparent;border-color:var(--gold);color:var(--gold)}
+.btn.big{width:100%;flex:none;min-height:54px;font-size:15px}
 
-/* route */
-.mapbox{background:linear-gradient(#0f2c23,#18493a);border-radius:16px;margin:0 0 18px;overflow:hidden}
-#map{display:block;width:100%;height:auto}
-#trail{stroke-dasharray:10 9;animation:march 1.2s linear infinite}
-@keyframes march{to{stroke-dashoffset:-19}}
-.pin circle.halo{transform-box:fill-box;transform-origin:center;animation:halo 1.8s ease-out infinite;opacity:0}
-.pin.on circle.halo{opacity:1}
-@keyframes halo{from{transform:scale(1);opacity:.8}to{transform:scale(2.4);opacity:0}}
-.pin text{font:900 14px Nunito,sans-serif;paint-order:stroke;stroke:#0b1f19;stroke-width:5px;stroke-linejoin:round}
-.route{display:grid;gap:13px}
-.stop{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding:14px;border:1px solid #e6d9bd;border-radius:14px;background:#fffdf7;transition:border-color .3s,box-shadow .3s}
-.stop.on{border-color:var(--red);box-shadow:0 0 0 3px #b52e3830}
-.num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--pine);color:#fff;font:900 18px Nunito}
-.stop.on .num{background:var(--red)}
-.stop h3{margin:0 0 2px;font:700 26px/1.1 'Mountains of Christmas',serif}
-.stop p{margin:0 0 6px;font-size:15px;color:var(--mute)}
-.stop a,.note a{font:900 14px Nunito,sans-serif;color:#9c2933;text-decoration:none;border-bottom:1px solid #d9a5a5}
-.time{display:block;color:#9b2933;font:900 13px Nunito,sans-serif}
-.note{font-size:15px;color:#59665f;margin:14px 0 0}
-.center{text-align:center;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-
-/* sweater */
-.sweater{background:linear-gradient(135deg,#7d202b,#a92e38);color:#fff;text-align:center;border:2px dashed #f5d58c;overflow:hidden;padding:0}
-.sweater h2{color:#ffe1a0;padding:0 18px}
-.knit{background:#12382d;color:#fff8e9;white-space:nowrap;overflow:hidden;position:relative;font-size:26px;padding:12px 0}
-.knit:before,.knit:after{content:"";position:absolute;left:0;right:0;height:10px;background:linear-gradient(135deg,#fff8e9 25%,transparent 25%) -10px 0/20px 20px,linear-gradient(225deg,#fff8e9 25%,transparent 25%) -10px 0/20px 20px}
-.knit:before{top:0}.knit:after{bottom:0;transform:scaleY(-1)}
-.knit span{display:inline-block;animation:slide 22s linear infinite;padding-top:4px}
-@keyframes slide{to{transform:translateX(-50%)}}
-.sw-body{padding:22px 20px 26px}
-.sw-body p{margin:8px auto 0;max-width:560px}
-.big{font-size:56px;line-height:1.1;display:inline-block;animation:sway 2.2s ease-in-out infinite}
-@keyframes sway{50%{transform:rotate(-6deg) scale(1.06)}}
-.meter{height:18px;border-radius:10px;background:#5b141c;max-width:420px;margin:18px auto 8px;overflow:hidden;border:1px solid #f5d58c}
-.meter i{display:block;height:100%;width:0;background:repeating-linear-gradient(45deg,#f4ca72 0 10px,#fff8e9 10px 20px,#54d89a 20px 30px);transition:width 1.2s cubic-bezier(.2,1.2,.4,1)}
-#verdict{min-height:1.6em;font-weight:900;color:#ffe1a0}
-
-/* drinks */
-.drinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.card{perspective:800px;background:none;border:0;padding:0;height:150px;color:inherit;text-align:center}
-.inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.3,1.4,.5,1);transform-style:preserve-3d}
-.card.f .inner{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;border-radius:14px;display:grid;place-content:center;gap:4px;padding:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid #eadfc8;background:#fffdf7}
-.face.back{transform:rotateY(180deg);background:var(--pine);color:var(--cream);border-color:var(--pine);font-size:15px}
-.emoji{font-size:38px;line-height:1}
-.face strong{font-size:16px;color:var(--ink)}
-.face small{font-size:13px;color:#7a877f}
-
-/* finale */
-.final{text-align:center}
-.final p{color:var(--mute);max-width:560px;margin:0 auto}
-#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--gold);color:var(--ink);padding:12px 18px;border-radius:30px;font-weight:900;opacity:0;transition:.35s;z-index:9;pointer-events:none;max-width:90vw;text-align:center}
-#toast.show{opacity:1;transform:translate(-50%,0)}
-#copybox{display:none;width:100%;max-width:520px;margin:12px auto 0;height:140px;font:15px Nunito,sans-serif;border-radius:10px;padding:10px}
-[hidden]{display:none!important}
-#rf{display:grid;gap:8px}
-.fl{font-weight:900;color:var(--ink);margin-top:8px;display:block}.fl small{font-weight:400;color:var(--mute)}
-#rf input:not([type]),#rf textarea{width:100%;font:16px Nunito,sans-serif;padding:12px 14px;border:2px solid #d9ccb0;border-radius:12px;background:#fff;color:var(--ink)}
+/* rsvp */
+#rf{display:grid;gap:10px;margin-top:4px}
+.fl{font:800 15px var(--sans);color:var(--ink);margin-top:4px;display:block}
+#rf input:not([type]),#rf textarea{width:100%;font:16px var(--sans);padding:13px 14px;border:2px solid #D9CCB0;border-radius:12px;background:#fff;color:var(--ink)}
 #rf input:focus,#rf textarea:focus{border-color:var(--pine);outline:none}
-.step{display:flex;align-items:center;gap:14px}
-.step button{width:48px;height:48px;border-radius:50%;border:2px solid var(--pine);background:#fff;color:var(--pine);font-size:24px;font-weight:900}
-.step output{font:900 28px Nunito;min-width:2ch;text-align:center}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative}
+.step{display:flex;align-items:center;gap:16px}
+.step button{width:46px;height:46px;border-radius:50%;border:2px solid var(--pine);background:#fff;color:var(--pine);font:900 22px var(--sans)}
+.step output{font:900 28px var(--sans);min-width:2ch;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips label{position:relative}
 .chips input,.chk input{position:absolute;opacity:0}
-.chips span{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:2px solid #d9ccb0;border-radius:30px;background:#fff;font-weight:700;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:2px solid #D9CCB0;border-radius:30px;background:#fff;font:700 15px var(--sans);cursor:pointer;transition:background .2s,color .2s}
 .chips input:checked+span{background:var(--red);border-color:var(--red);color:#fff}
 .chips input:focus-visible+span,.chk input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
-.chk{position:relative;margin-top:10px}
-.chk span{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:700;cursor:pointer}
+.chk{position:relative;margin-top:4px}
+.chk span{display:flex;align-items:center;gap:10px;min-height:44px;font:700 15px var(--sans);cursor:pointer}
 .chk span:before{content:"";width:26px;height:26px;border-radius:8px;border:2px solid var(--pine);background:#fff;flex:none}
 .chk input:checked+span:before{background:var(--pine);box-shadow:inset 0 0 0 4px #fff}
-.err{color:#9c2933;font-weight:900;margin:0;min-height:1.2em}
-.btn.ghost2{background:transparent;border:2px solid var(--pine);color:var(--pine)}
-#done{text-align:center}#done h3{font:700 34px 'Mountains of Christmas',serif;margin:6px 0}
-.footer{text-align:center;color:#e5d5b6;font-size:14px;padding:12px}
+.err{color:#9C2933;font-weight:900;margin:0;min-height:1.2em}
+#done{text-align:center}#done .e{font-size:44px}#done h3{font:900 30px/1.1 var(--serif);margin:6px 0}
+#copybox{display:none;width:100%;margin-top:12px;height:140px;font:15px var(--sans);border-radius:10px;padding:10px}
 
-/* floating music button */
-#fab{position:fixed;right:16px;bottom:16px;z-index:8;width:60px;height:60px;border-radius:50%;border:2px solid var(--gold);background:var(--red);color:#fff;font-size:24px;display:grid;place-items:center;box-shadow:0 8px 20px #0008,0 0 calc(var(--beat)*30px) #ff4b58}
-#fab .bars{display:none;gap:3px;align-items:flex-end;height:22px}
-#fab .bars i{width:4px;background:#fff;border-radius:2px;animation:eq .8s ease-in-out infinite alternate}
-#fab .bars i:nth-child(2){animation-delay:.2s}#fab .bars i:nth-child(3){animation-delay:.4s}
+/* sweater */
+.sweater{background:var(--red);color:#fff;padding:0 0 26px;overflow:hidden;text-align:center}
+.knit{height:64px;background:var(--pine) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='64'%3E%3Cpath d='M0 0l10 9 10-9zM20 0l10 9 10-9zM40 0l10 9 10-9zM60 0l8 7V0zM0 64l10-9 10 9zM20 64l10-9 10 9zM40 64l10-9 10 9zM60 64l8-7v7z' fill='%23FFF7E8'/%3E%3Cpath d='M48 24l7 12H41zM46 36h4v4h-4z' fill='%2354D89A'/%3E%3Cg stroke='%23FFF7E8' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M14 24v16M6 32h16M8 26l12 12M20 26L8 38'/%3E%3C/g%3E%3C/svg%3E") repeat-x;animation:knit 14s linear infinite}
+@keyframes knit{to{background-position:-680px 0}}
+.sw{padding:18px 22px 0;display:grid;justify-items:center;gap:10px}
+.sweater h2{color:#FFE1A0;font-size:30px;line-height:1}
+.sweater p{margin:0;font-size:15px}
+.meter{width:100%;max-width:300px;height:18px;border-radius:10px;background:#5B141C;border:1px solid #F5D58C;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:repeating-linear-gradient(45deg,var(--gold) 0 10px,#FFF7E8 10px 20px,#54D89A 20px 30px);transition:width 1.2s cubic-bezier(.2,1.2,.4,1)}
+#verdict{font:900 15px var(--sans);color:#FFE1A0;min-height:1.4em}
+.sweater .btn{flex:none}
+
+/* jukebox */
+.juke{background:var(--deep);color:var(--cream);border:1px solid #D2AD63}
+.jr{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;align-items:center}
+.record{width:88px;height:88px;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 3px,#262626 3px 4px);position:relative;animation:spin 3s linear infinite;animation-play-state:paused;box-shadow:0 8px 18px #0008}
+.record:after{content:"";position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle,var(--deep) 0 9%,var(--red) 10%)}
+.playing .record{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}
+.np{font:900 11px var(--sans);letter-spacing:.1em;color:#A9C4B6}
+.jt{font:900 26px/1.1 var(--serif);color:var(--cream)}
+.jc{font-size:13px;color:#A9C4B6}
+.ctr{display:flex;gap:10px;margin-top:16px}.ctr .round{flex:none;width:48px;padding:0}
+
+.footer{text-align:center;padding:4px 20px 40px;display:grid;justify-items:center;gap:6px}
+.footer p{margin:0;font:700 14px var(--sans);color:#E5D5B6}.footer .sig{font:italic 600 16px var(--serif);color:var(--gold)}
+.footer .btn{flex:none;margin-top:8px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--gold);color:var(--ink);padding:12px 18px;border-radius:30px;font-weight:900;opacity:0;transition:.35s;z-index:9;pointer-events:none;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:8;width:58px;height:58px;border-radius:50%;border:2px solid var(--gold);background:var(--red);color:#fff;font-size:24px;display:grid;place-items:center;box-shadow:0 8px 20px #0008,0 0 calc(var(--beat)*30px) #ff4b58}
+#fab .bars{display:none;gap:3px;align-items:flex-end;height:22px}#fab .bars i{width:4px;background:#fff;border-radius:2px;animation:eq .8s ease-in-out infinite alternate}#fab .bars i:nth-child(2){animation-delay:.2s}#fab .bars i:nth-child(3){animation-delay:.4s}
 @keyframes eq{from{height:5px}to{height:22px}}
-.playing #fab .bars{display:flex}.playing #fab .note-ic{display:none}
-
-@media(max-width:600px){.jgrid{grid-template-columns:1fr;justify-items:center;text-align:center}.ctrls,.tracks{justify-content:center}.record{width:150px;height:150px}.drinks{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:18px}.pin text{font-size:20px;stroke-width:6px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js h1 .ch,.reveal{opacity:1;transform:none}}
+.playing #fab .bars{display:flex}.playing #fab .ni{display:none}
+@media(max-width:360px){.count{grid-template-columns:repeat(4,64px);gap:8px}.tile b{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js h1 .ch,.js .host,.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <canvas id="fx" aria-hidden="true"></canvas>
-<div class="lights" aria-hidden="true" id="lights"></div>
-
 <div id="gift" role="dialog" aria-label="Open the invite">
   <div>
-    <p class="gift-k">YOU'VE GOT A PRESENT, COUSIN</p>
+    <p class="gk">Amber's got a present for you, cousin</p>
     <button class="giftbtn" id="giftBtn" aria-label="Unwrap the invite and start the Christmas music">
       <span class="glow"></span>
       <svg viewBox="0 0 240 230" aria-hidden="true">
         <ellipse cx="120" cy="222" rx="96" ry="8" fill="#000" opacity=".35"/>
-        <rect x="30" y="92" width="180" height="128" rx="8" fill="#b52e38"/>
+        <rect x="30" y="92" width="180" height="128" rx="8" fill="#C8313E"/>
         <rect x="30" y="92" width="180" height="128" rx="8" fill="url(#sh)"/>
-        <rect x="108" y="92" width="24" height="128" fill="#f4ca72"/>
-        <rect x="30" y="140" width="180" height="20" fill="#f4ca72" opacity=".9"/>
+        <rect x="108" y="92" width="24" height="128" fill="#F2C467"/>
+        <rect x="30" y="140" width="180" height="20" fill="#F2C467" opacity=".9"/>
         <g id="lid">
-          <rect x="20" y="66" width="200" height="34" rx="7" fill="#c93a45"/>
+          <rect x="20" y="66" width="200" height="34" rx="7" fill="#D63E4A"/>
           <rect x="20" y="88" width="200" height="12" fill="#00000022"/>
-          <rect x="106" y="66" width="28" height="34" fill="#f4ca72"/>
-          <path d="M120 66 C90 20 50 30 66 56 C76 70 104 68 120 66Z" fill="#f4ca72" stroke="#c99a3f" stroke-width="3"/>
-          <path d="M120 66 C150 20 190 30 174 56 C164 70 136 68 120 66Z" fill="#f4ca72" stroke="#c99a3f" stroke-width="3"/>
-          <circle cx="120" cy="64" r="10" fill="#e8b54f"/>
+          <rect x="106" y="66" width="28" height="34" fill="#F2C467"/>
+          <path d="M120 66 C90 20 50 30 66 56 C76 70 104 68 120 66Z" fill="#F2C467" stroke="#C99A3F" stroke-width="3"/>
+          <path d="M120 66 C150 20 190 30 174 56 C164 70 136 68 120 66Z" fill="#F2C467" stroke="#C99A3F" stroke-width="3"/>
+          <circle cx="120" cy="64" r="10" fill="#E8B54F"/>
         </g>
         <defs><linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient></defs>
       </svg>
     </button>
-    <p class="gift-t">Tap to unwrap</p>
-    <p class="gift-s">Sound on — the carols start when it opens 🔔</p>
+    <p class="gt">Tap to unwrap</p>
+    <p class="gs">Sound on — the carols start when it opens 🔔</p>
     <button class="quiet" id="quietBtn">Open without music</button>
   </div>
 </div>
 
-<main class="wrap">
+<div class="app">
+<div class="lights" aria-hidden="true" id="lights"></div>
 <header class="hero">
-  <div class="kicker">THE MOST WONDERFUL CRAWL OF THE YEAR</div>
-  <h1><span class="ln">COUSINS</span><span class="ln">CHRISTMAS</span><span class="ln">BAR CRAWL</span></h1>
-  <div class="subtitle">GOOD COUSINS • BAD SWEATERS • GREAT MEMORIES</div>
-  <div class="date">SAT · DEC 5, 2026 · 6:00 PM</div>
-  <div class="count" id="count" aria-live="off">
+  <p class="host">Amber's</p>
+  <h1><span class="ln">Cousins</span><span class="ln">Christmas</span><span class="ln">Crawl</span></h1>
+  <p class="sub">Good cousins · Bad sweaters · Great memories</p>
+  <div class="stub">SAT · DEC 5 · 6:00 PM</div>
+  <div class="count" id="count">
     <div class="tile"><b id="cd">--</b><small>days</small></div>
     <div class="tile"><b id="ch">--</b><small>hours</small></div>
     <div class="tile"><b id="cm">--</b><small>min</small></div>
     <div class="tile"><b id="cs">--</b><small>sec</small></div>
   </div>
-  <p class="countnote" id="countnote">until the first toast at Amici's</p>
-  <div class="center"><a class="btn" href="#rsvp">📝 RSVP now</a></div>
+  <p class="cnote" id="countnote">until the first toast at Amici's</p>
+  <a class="cta" href="#rsvp">RSVP in 30 seconds <span aria-hidden="true">→</span></a>
 </header>
 
-<section class="panel juke reveal" id="juke">
-  <div class="jgrid">
-    <div class="record" aria-hidden="true"><div class="label">Cousins<br>'26</div></div>
-    <div>
-      <p class="now" id="nowLbl">Christmas jukebox</p>
-      <div class="title" id="trackTitle">Jingle Bells</div>
-      <p class="credit" id="trackCredit">James Lord Pierpont, 1857</p>
-      <canvas id="viz" aria-hidden="true"></canvas>
-      <div class="ctrls">
-        <button class="btn round ghost" id="prev" aria-label="Previous carol">⏮</button>
-        <button class="btn" id="play">▶ Play carols</button>
-        <button class="btn round ghost" id="next" aria-label="Next carol">⏭</button>
-      </div>
-    </div>
+<main class="body">
+<section class="card reveal" id="pass">
+  <div class="phead"><h2>The Crawl Pass</h2><span class="tag">3 STOPS</span></div>
+  <p class="lead">Kickoff is 6:00 sharp. After that, roll with the cousins.</p>
+  <div class="stops">
+    <article class="stop"><div class="badge">1</div><div><span class="t">6:00 PM · KICKOFF</span><h3>Amici's</h3><p>13000 Royalton Rd, North Royalton, OH 44133</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Amici+Restaurant+Bar+13000+Royalton+Rd+North+Royalton+OH">Directions ↗</a></div></article>
+    <article class="stop"><div class="badge">2</div><div><span class="t">NEXT STOP</span><h3>Brew Garden</h3><p>16555 Southpark Center, Strongsville, OH 44136</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Brew+Garden+16555+Southpark+Center+Strongsville+OH">Directions ↗</a></div></article>
+    <article class="stop"><div class="badge">3</div><div><span class="t">LAST CALL</span><h3>Johnny J's Pub & Grille</h3><p>15323 Pearl Rd, Strongsville, OH 44136</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Johnny+Js+15323+Pearl+Rd+Strongsville+OH">Directions ↗</a></div></article>
   </div>
-  <div class="tracks" id="tracks"></div>
-  <p class="tiny">Classic carols, played live in your browser on bells, sleigh bells and a bouncy bass. Turn it up — maybe not all the way at the bar.</p>
-</section>
-
-<section class="panel reveal">
-  <h2>🎅 The Christmas crawl route</h2>
-  <div class="mapbox">
-    <svg id="map" viewBox="0 0 600 250" role="img" aria-label="Route: Amici's, then Brew Garden, then Johnny J's">
-      <defs><symbol id="tree" viewBox="-16 -34 32 42"><path d="M0-34 L13-8 H6 L15 4 H-15 L-6-8 H-13Z" fill="#2f7a59"/><rect x="-2.5" y="4" width="5" height="5" fill="#6b4a2f"/></symbol></defs>
-      <g fill="#fff" id="stars"></g>
-      <circle cx="530" cy="40" r="20" fill="#fff8e9" opacity=".9"/><circle cx="540" cy="34" r="18" fill="#163f31"/>
-      <path d="M0 210 Q120 170 250 205 T520 195 T600 190 V250 H0Z" fill="#fff8e9" opacity=".16"/>
-      <path d="M0 232 Q160 205 330 230 T600 222 V250 H0Z" fill="#fff8e9" opacity=".28"/>
-      <use href="#tree" x="10" y="150" width="40" height="52"/><use href="#tree" x="150" y="170" width="30" height="40"/><use href="#tree" x="390" y="180" width="34" height="44"/><use href="#tree" x="560" y="160" width="36" height="48"/><use href="#tree" x="220" y="30" width="26" height="34"/>
-      <path id="trail" d="M70 175 C150 45 235 55 300 120 S455 205 535 95" fill="none" stroke="#f4ca72" stroke-width="4" stroke-linecap="round"/>
-      <g id="pins"></g>
-      <text id="sleigh" font-size="34" text-anchor="middle" dominant-baseline="middle">🛷</text>
-    </svg>
-  </div>
-  <div class="route">
-    <article class="stop" data-s="0"><div class="num">1</div><div>
-      <span class="time">6:00 PM · Meet-up & first stop</span>
-      <h3>Amici's</h3>
-      <p>13000 Royalton Rd, North Royalton, OH 44133</p>
-      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Amici+Restaurant+Bar+13000+Royalton+Rd+North+Royalton+OH">Map & directions ↗</a>
-    </div></article>
-    <article class="stop" data-s="1"><div class="num">2</div><div>
-      <span class="time">Next stop</span>
-      <h3>Brew Garden</h3>
-      <p>16555 Southpark Center, Strongsville, OH 44136</p>
-      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Brew+Garden+16555+Southpark+Center+Strongsville+OH">Map & directions ↗</a>
-    </div></article>
-    <article class="stop" data-s="2"><div class="num">3</div><div>
-      <span class="time">Last stop · Keep the Christmas cheer going</span>
-      <h3>Johnny J's Pub & Grille</h3>
-      <p>15323 Pearl Rd, Strongsville, OH 44136</p>
-      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Johnny+Js+15323+Pearl+Rd+Strongsville+OH">Map & directions ↗</a>
-    </div></article>
-  </div>
-  <p class="note">We're kicking things off at Amici's at 6:00 PM. Stop times after that are flexible — roll with the cousins!</p>
-  <div class="center">
-    <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Amici+Restaurant+Bar+13000+Royalton+Rd+North+Royalton+OH/Brew+Garden+16555+Southpark+Center+Strongsville+OH/Johnny+Js+15323+Pearl+Rd+Strongsville+OH/">Open full crawl route ↗</a>
-    <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cousins+Christmas+Bar+Crawl&dates=20261205T230000Z/20261206T040000Z&location=Amici%27s%2C+13000+Royalton+Rd%2C+North+Royalton%2C+OH+44133&details=Amici%27s+%E2%86%92+Brew+Garden+%E2%86%92+Johnny+J%27s.+Ugly+Christmas+sweater+REQUIRED.">📅 Add to calendar</a>
+  <div class="row">
+    <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Amici+Restaurant+Bar+13000+Royalton+Rd+North+Royalton+OH/Brew+Garden+16555+Southpark+Center+Strongsville+OH/Johnny+Js+15323+Pearl+Rd+Strongsville+OH/">Full route ↗</a>
+    <a class="btn out" id="ics" download="ambers-cousins-christmas-crawl.ics">📅 Calendar</a>
   </div>
 </section>
 
-<section class="panel reveal" id="rsvp">
-  <h2>📝 Count me in!</h2>
-  <p class="note" style="margin:0 0 16px" id="rsvpLead">Fill this out and it texts your RSVP straight to Amber. No app, no account, no sign-up.</p>
+<section class="card reveal" id="rsvp">
+  <h2 style="font-size:34px">Count me in!</h2>
+  <p class="lead" id="rsvpLead">Fill this out and it texts your RSVP straight to Amber. No app, no account.</p>
   <form id="rf" novalidate>
     <label class="fl" for="nm">Your name</label>
-    <input id="nm" name="nm" autocomplete="name" placeholder="Cousin Eddie" required>
+    <input id="nm" autocomplete="name" placeholder="Cousin Eddie" required>
     <span class="fl">How many in your crew?</span>
     <div class="step"><button type="button" id="mn" aria-label="Fewer people">−</button><output id="ct">1</output><button type="button" id="pl" aria-label="More people">+</button></div>
     <span class="fl">Which stops?</span>
-    <div class="chips" data-g="stops">
+    <div class="chips">
       <label><input type="radio" name="stops" value="All three stops" checked><span>All three 🍻</span></label>
       <label><input type="radio" name="stops" value="Starting at Amici's, then we'll see"><span>Just the start</span></label>
       <label><input type="radio" name="stops" value="Meeting up later in the night"><span>Meeting up later</span></label>
@@ -328,77 +236,70 @@ h1 .ch{display:inline-block}
       <label><input type="radio" name="sw" value="still hunting for one"><span>Still hunting 👀</span></label>
     </div>
     <label class="chk"><input type="checkbox" id="dd"><span>I'll be a designated driver 🧃</span></label>
-    <label class="fl" for="nt">Anything else? <small>(optional)</small></label>
+    <label class="fl" for="nt">Anything else? <small style="font-weight:400;color:var(--mute)">(optional)</small></label>
     <textarea id="nt" rows="2" placeholder="Bringing my plus-one, running late, etc."></textarea>
     <p class="err" id="err" role="alert"></p>
-    <div class="center"><button class="btn dark" type="submit">💬 Text my RSVP</button><button class="btn ghost2" type="button" id="no">Can't make it 😢</button></div>
+    <button class="btn dark big" type="submit" id="sendBtn">💬 Text my RSVP to Amber</button>
+    <button class="btn out big" type="button" id="no">Can't make it 😢</button>
   </form>
   <div id="done" hidden>
-    <div class="emoji">🎉</div>
+    <div class="e">🎉</div>
     <h3 id="doneT">You're on the list!</h3>
-    <p class="note" id="doneP">Your text should be open — just hit send.</p>
-    <div class="center"><button class="btn dark" type="button" id="resend">Open the text again</button><button class="btn ghost2" type="button" id="edit">Change my RSVP</button><a class="btn" id="ics" download="cousins-christmas-crawl.ics">📅 Apple / Outlook calendar</a></div>
+    <p class="lead" id="doneP">Your text should be open — just hit send.</p>
+    <div class="row"><button class="btn dark" type="button" id="resend">Open the text again</button><button class="btn out" type="button" id="edit">Change RSVP</button></div>
   </div>
 </section>
 
-<section class="panel sweater reveal">
-  <div class="knit" aria-hidden="true"><span>❄ 🎄 ❄ 🦌 ❄ 🎅 ❄ ⛄ ❄ 🎁 ❄ 🔔 ❄ 🎄 ❄ 🦌 ❄ 🎅 ❄ ⛄ ❄ 🎁 ❄ 🔔 ❄ 🎄 ❄ 🦌 ❄ 🎅 ❄ ⛄ ❄ 🎁 ❄ 🔔 ❄ 🎄 ❄ 🦌 ❄ 🎅 ❄ ⛄ ❄ 🎁 ❄ 🔔 </span></div>
-  <div class="sw-body">
-    <div class="big" aria-hidden="true">🧶🎄🧦</div>
-    <h2>Ugly Christmas sweater required</h2>
-    <p>Go ALL OUT. The louder, tackier, sparklier and more ridiculous, the better. Santa, reindeer, blinking lights, tinsel — bring it.</p>
-    <p><strong>No ugly sweater = you understood the assignment incorrectly. 😉</strong></p>
+<section class="card sweater reveal">
+  <div class="knit" aria-hidden="true"></div>
+  <div class="sw">
+    <h2>Ugly Christmas sweater REQUIRED</h2>
+    <p>The louder, tackier and sparklier, the better. No sweater = you misunderstood the assignment. 😉</p>
     <div class="meter" aria-hidden="true"><i id="meter"></i></div>
     <p id="verdict" aria-live="polite"></p>
-    <button class="btn" id="rate">Run the Ugly-o-Meter 🧶</button>
+    <button class="btn gold" id="rate">Run the Ugly-o-Meter 🧶</button>
   </div>
 </section>
 
-<section class="panel reveal">
-  <h2>🍸 Festive sips & Christmas cheer</h2>
-  <div class="drinks" id="drinks">
-    <button class="card"><div class="inner"><div class="face"><div class="emoji">🍒</div><strong>Santa's Sparkler</strong><small>tap me</small></div><div class="face back">Something cranberry, bubbly & bright</div></div></button>
-    <button class="card"><div class="inner"><div class="face"><div class="emoji">🍫</div><strong>Chocolate Sleigh Ride</strong><small>tap me</small></div><div class="face back">A cozy chocolatey holiday treat</div></div></button>
-    <button class="card"><div class="inner"><div class="face"><div class="emoji">🍏</div><strong>Grinch Juice</strong><small>tap me</small></div><div class="face back">A fun green festive cocktail or mocktail</div></div></button>
-    <button class="card"><div class="inner"><div class="face"><div class="emoji">🥂</div><strong>Holiday Bubbles</strong><small>tap me</small></div><div class="face back">Cheers to getting together</div></div></button>
-    <button class="card"><div class="inner"><div class="face"><div class="emoji">🍺</div><strong>Winter Brew</strong><small>tap me</small></div><div class="face back">Pick a seasonal beer to try</div></div></button>
-    <button class="card"><div class="inner"><div class="face"><div class="emoji">🧃</div><strong>Designated Driver</strong><small>tap me</small></div><div class="face back">Zero-proof cheers count, too!</div></div></button>
+<section class="card juke reveal" id="juke">
+  <div class="jr">
+    <div class="record" aria-hidden="true"></div>
+    <div><div class="np" id="nowLbl">CHRISTMAS JUKEBOX</div><div class="jt" id="trackTitle">Jingle Bells</div><div class="jc" id="trackCredit">James Lord Pierpont, 1857</div></div>
   </div>
-  <p class="note">Drink ideas are just for fun — not a venue menu. Please pace yourselves, eat something, and plan a sober ride before the first stop.</p>
+  <div class="ctr">
+    <button class="btn goldout round" id="prev" aria-label="Previous carol">⏮</button>
+    <button class="btn gold" id="play">▶ Play carols</button>
+    <button class="btn goldout round" id="next" aria-label="Next carol">⏭</button>
+  </div>
 </section>
-
-<section class="panel final reveal">
-  <div class="emoji" aria-hidden="true">📸🎁✨</div>
-  <h2>One night. Three stops. A whole lot of cousins.</h2>
-  <p>Bring your holiday spirit, your ugliest sweater, and your best Christmas-bar-crawl energy. Let's make this one a tradition!</p>
-  <div class="center"><button class="btn dark" id="copy">↗ Share with a cousin</button></div>
-  <textarea id="copybox" readonly aria-label="Invite text"></textarea>
-</section>
-<footer class="footer">Made with Christmas cheer ✦ Cousins Christmas Bar Crawl 2026<br>Be merry. Be kind. Get home safe. 🎄</footer>
 </main>
 
-<button id="fab" aria-label="Play or pause the carols"><span class="note-ic">♪</span><span class="bars"><i></i><i></i><i></i></span></button>
+<footer class="footer">
+  <p>Be merry. Be kind. Get home safe. 🎄</p>
+  <p class="sig">Hosted with love by Amber</p>
+  <button class="btn goldout" id="copy">↗ Share with a cousin</button>
+  <textarea id="copybox" readonly aria-label="Invite text"></textarea>
+</footer>
+</div>
+
+<button id="fab" aria-label="Play or pause the carols"><span class="ni">♪</span><span class="bars"><i></i><i></i><i></i></span></button>
 <div id="toast" role="status"></div>
 
 <script>
 {
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const root=document.documentElement, body=document.body;
+const root=document.documentElement,body=document.body;
 body.classList.add('js');
+$('#lights').innerHTML='<i class="bulb"></i>'.repeat(16);
+let li=0;$$('h1 .ln').forEach(ln=>{ln.innerHTML=[...ln.textContent].map(c=>`<span class="ch" style="--i:${li++}">${c}</span>`).join('')});
 
-/* lights + title letters */
-$('#lights').innerHTML='<i class="bulb"></i>'.repeat(Math.min(28,Math.max(14,Math.round(innerWidth/38))));
-let li=0;
-$$('h1 .ln').forEach(ln=>{ln.innerHTML=[...ln.textContent].map(c=>c===' '?' ':`<span class="ch" style="--i:${li++}">${c}</span>`).join('')});
-
-/* ---------- MUSIC ENGINE (public-domain carols, synthesized) ---------- */
+/* ---------- carols (public domain, synthesized) ---------- */
 const ROOT={C:0,'C#':1,Db:1,D:2,Eb:3,E:4,F:5,'F#':6,Gb:6,G:7,Ab:8,A:9,Bb:10,B:11};
 const mf=m=>440*2**((m-69)/12);
 const midi=n=>{const m=n.match(/^([A-G][#b]?)(\d)$/);return (+m[2]+1)*12+ROOT[m[1]]};
 const seq=s=>s.trim().split(/\s+/).map(x=>{const [n,d]=x.split(':');return [n,+d]});
 const chord=n=>{const m=n.match(/^([A-G][#b]?)(m|7)?$/);return {r:ROOT[m[1]],iv:m[2]==='m'?[0,3,7]:m[2]==='7'?[0,4,7,10]:[0,4,7]}};
-
 const WV='G5:1 G5:0.5 A5:0.5 G5:0.5 F#5:0.5 E5:1 E5:1 E5:1 A5:1 A5:0.5 B5:0.5 A5:0.5 G5:0.5 F#5:1 D5:1 D5:1 B5:1 B5:0.5 C6:0.5 B5:0.5 A5:0.5 G5:1 E5:1 D5:0.5 D5:0.5 E5:1 A5:1 F#5:1';
 const WC='G:3 C:3 A7:3 D:3 B7:3 Em:3 C:2 D:1';
 const DA='G5:1.5 F5:0.5 E5:1 D5:1 C5:1 D5:1 E5:1 C5:1 D5:0.5 E5:0.5 F5:0.5 D5:0.5 E5:1.5 D5:0.5 C5:1 B4:1 C5:2';
@@ -411,23 +312,18 @@ const SONGS=[
   m:`${DA} ${DA} D5:1.5 E5:0.5 F5:1 D5:1 E5:1.5 F5:0.5 G5:1 D5:1 E5:0.5 F#5:0.5 G5:1 A5:0.5 B5:0.5 C6:1 B5:1 A5:1 G5:2 ${DA}`,
   h:`${DAC} ${DAC} G:4 C:2 G:2 D:4 G:2 G7:2 ${DAC}`},
  {t:'We Wish You a Merry Christmas',c:'Traditional English carol',bpm:172,bells:1,
-  m:`D5:1 ${WV} G5:2 D5:1 ${WV} G5:2 D5:1 ${WV} G5:3`,
-  h:`R:1 ${WC} G:3 ${WC} G:3 ${WC} G:3`},
+  m:`D5:1 ${WV} G5:2 D5:1 ${WV} G5:2 D5:1 ${WV} G5:3`,h:`R:1 ${WC} G:3 ${WC} G:3 ${WC} G:3`},
  {t:'Silent Night',c:'Franz Xaver Gruber, 1818',bpm:96,box:1,
   m:'G4:1.5 A4:0.5 G4:1 E4:3 G4:1.5 A4:0.5 G4:1 E4:3 D5:2 D5:1 B4:3 C5:2 C5:1 G4:3 A4:2 A4:1 C5:1.5 B4:0.5 A4:1 G4:1.5 A4:0.5 G4:1 E4:3 A4:2 A4:1 C5:1.5 B4:0.5 A4:1 G4:1.5 A4:0.5 G4:1 E4:3 D5:2 D5:1 F5:1.5 D5:0.5 B4:1 C5:3 E5:3 C5:1 G4:1 E4:1 G4:1.5 F4:0.5 D4:1 C4:6',
   h:'C:3 C:3 C:3 C:3 G:3 G:3 C:3 C:3 F:3 F:3 C:3 C:3 F:3 F:3 C:3 C:3 G:3 G7:3 C:3 C:3 C:3 G7:3 C:6'}
 ];
-function build(s){
-  const ev=[];let b=0;
+function build(s){const ev=[];let b=0;
   for(const [n,d] of seq(s.m)){if(n!=='R')ev.push({t:b,k:'n',f:mf(midi(n)),d});b+=d}
-  const total=b;let c=0;
-  for(const [n,d] of seq(s.h)){if(n!=='R')ev.push({t:c,k:'c',ch:chord(n),d});c+=d}
+  const total=b;let c=0;for(const [n,d] of seq(s.h)){if(n!=='R')ev.push({t:c,k:'c',ch:chord(n),d});c+=d}
   if(s.bells)for(let x=0;x<total;x+=0.5)ev.push({t:x,k:'j',a:x%1===0,kick:x%2===0});
-  ev.sort((a,b)=>a.t-b.t);return {ev,total};
-}
+  ev.sort((a,b)=>a.t-b.t);return {ev,total}}
 let AC=null,master,comp,wet,an,noise,fft;
-function initAudio(){
-  if(AC)return;
+function initAudio(){if(AC)return;
   AC=new (window.AudioContext||window.webkitAudioContext)();
   comp=AC.createDynamicsCompressor();master=AC.createGain();master.gain.value=.8;
   an=AC.createAnalyser();an.fftSize=128;fft=new Uint8Array(an.frequencyBinCount);
@@ -435,210 +331,119 @@ function initAudio(){
   const r=AC.sampleRate,len=Math.floor(r*2.4),ir=AC.createBuffer(2,len,r);
   for(let ch=0;ch<2;ch++){const d=ir.getChannelData(ch);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*(1-i/len)**3}
   const conv=AC.createConvolver();conv.buffer=ir;wet=AC.createGain();wet.gain.value=.3;wet.connect(conv);conv.connect(comp);
-  noise=AC.createBuffer(1,r*0.3,r);const nd=noise.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
-}
-function v(type,f,t,peak,att,hold,rel,send){
-  const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;
+  noise=AC.createBuffer(1,r*0.3,r);const nd=noise.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1}
+function v(type,f,t,peak,att,hold,rel,send){const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;
   g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(peak,t+att);
   g.gain.exponentialRampToValueAtTime(peak*0.55,t+Math.max(att+0.01,hold));
   g.gain.exponentialRampToValueAtTime(0.0001,t+Math.max(att+0.02,hold)+rel);
-  o.connect(g);g.connect(master);if(send)g.connect(wet);
-  o.start(t);o.stop(t+hold+rel+0.1);
-}
-function fire(e,t){
-  const s=SONGS[cur];
-  if(e.k==='n'){
-    const d=e.d*spb;
+  o.connect(g);g.connect(master);if(send)g.connect(wet);o.start(t);o.stop(t+hold+rel+0.1)}
+function fire(e,t){const s=SONGS[cur];
+  if(e.k==='n'){const d=e.d*spb;
     if(s.box){v('sine',e.f,t,.24,.008,.06,1.5,1);v('sine',e.f*2,t,.06,.005,.04,.9,1);v('triangle',e.f/2,t,.05,.03,d*.9,.4,1)}
     else{v('triangle',e.f,t,.17,.012,d*.8,.12,1);v('square',e.f,t,.018,.01,d*.6,.08,0);v('sine',e.f*2,t,.05,.004,.03,.45,1)}
-  }else if(e.k==='c'){
-    const base=48+e.ch.r;
+  }else if(e.k==='c'){const base=48+e.ch.r;
     e.ch.iv.forEach(i=>v(s.box?'sine':'triangle',mf(base+12+i),t,s.box?.03:.028,.15,e.d*spb-.05,.4,1));
     const bf=mf(36+e.ch.r);
-    for(let k=0;k<e.d;k++){const tt=t+k*spb;if(s.box&&k)continue;v('triangle',k%2?bf*1.5:bf,tt,s.box?.16:.22,.01,s.box?spb*2:spb*.45,.1,0)}
-  }else if(e.k==='j'){
-    const src=AC.createBufferSource(),hp=AC.createBiquadFilter(),g=AC.createGain();
+    for(let k=0;k<e.d;k++){if(s.box&&k)continue;v('triangle',k%2?bf*1.5:bf,t+k*spb,s.box?.16:.22,.01,s.box?spb*2:spb*.45,.1,0)}
+  }else if(e.k==='j'){const src=AC.createBufferSource(),hp=AC.createBiquadFilter(),g=AC.createGain();
     src.buffer=noise;hp.type='highpass';hp.frequency.value=7000;
     g.gain.setValueAtTime(e.a?.13:.06,t);g.gain.exponentialRampToValueAtTime(0.0001,t+.09);
     src.connect(hp);hp.connect(g);g.connect(master);src.start(t);src.stop(t+.12);
     if(e.kick){const o=AC.createOscillator(),kg=AC.createGain();o.frequency.setValueAtTime(130,t);o.frequency.exponentialRampToValueAtTime(45,t+.15);
-      kg.gain.setValueAtTime(.35,t);kg.gain.exponentialRampToValueAtTime(0.0001,t+.2);o.connect(kg);kg.connect(master);o.start(t);o.stop(t+.22)}
-  }
-}
+      kg.gain.setValueAtTime(.35,t);kg.gain.exponentialRampToValueAtTime(0.0001,t+.2);o.connect(kg);kg.connect(master);o.start(t);o.stop(t+.22)}}}
 let cur=0,playing=false,EV=[],ptr=0,t0=0,spb=.4,total=0;
-function load(i){
-  cur=(i+SONGS.length)%SONGS.length;const s=SONGS[cur];spb=60/s.bpm;
-  const b=build(s);EV=b.ev;total=b.total;ptr=0;
-  if(AC){t0=AC.currentTime+.15}
-  $('#trackTitle').textContent=s.t;$('#trackCredit').textContent=s.c;
-  $$('#tracks button').forEach((b,j)=>b.classList.toggle('on',j===cur));
-}
-setInterval(()=>{
-  if(!playing||!AC)return;
-  const ahead=AC.currentTime+.2;
+function load(i){cur=(i+SONGS.length)%SONGS.length;const s=SONGS[cur];spb=60/s.bpm;const b=build(s);EV=b.ev;total=b.total;ptr=0;
+  if(AC)t0=AC.currentTime+.15;$('#trackTitle').textContent=s.t;$('#trackCredit').textContent=s.c}
+setInterval(()=>{if(!playing||!AC)return;const ahead=AC.currentTime+.2;
   while(ptr<EV.length&&t0+EV[ptr].t*spb<ahead){fire(EV[ptr],Math.max(AC.currentTime,t0+EV[ptr].t*spb));ptr++}
-  if(ptr>=EV.length&&AC.currentTime>t0+total*spb+1)load(cur+1);
-},25);
-function play(){
-  initAudio();try{AC.resume()}catch(e){}
+  if(ptr>=EV.length&&AC.currentTime>t0+total*spb+1)load(cur+1)},25);
+function play(){initAudio();try{AC.resume()}catch(e){}
   master.gain.cancelScheduledValues(AC.currentTime);master.gain.setTargetAtTime(.8,AC.currentTime,.02);
-  playing=true;load(cur);body.classList.add('playing');
-  $('#play').textContent='❚❚ Pause';$('#nowLbl').textContent='Now playing';
-}
-function pause(){
-  playing=false;body.classList.remove('playing');
-  if(AC)master.gain.setTargetAtTime(0,AC.currentTime,.05);
-  $('#play').textContent='▶ Play carols';$('#nowLbl').textContent='Christmas jukebox';
-}
+  playing=true;load(cur);body.classList.add('playing');$('#play').textContent='❚❚ Pause';$('#nowLbl').textContent='NOW PLAYING'}
+function pause(){playing=false;body.classList.remove('playing');if(AC)master.gain.setTargetAtTime(0,AC.currentTime,.05);
+  $('#play').textContent='▶ Play carols';$('#nowLbl').textContent='CHRISTMAS JUKEBOX'}
 const toggle=()=>playing?pause():play();
 function jump(i){if(playing&&AC){master.gain.setTargetAtTime(0,AC.currentTime,.02);setTimeout(()=>{load(i);master.gain.setTargetAtTime(.8,AC.currentTime,.03)},90)}else load(i)}
-$('#tracks').innerHTML=SONGS.map((s,i)=>`<button data-i="${i}">${s.t}</button>`).join('');
-$('#tracks').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(!playing){cur=+b.dataset.i;play()}else jump(+b.dataset.i)});
-$('#play').onclick=toggle;$('#fab').onclick=toggle;
-$('#prev').onclick=()=>playing?jump(cur-1):load(cur-1);
-$('#next').onclick=()=>playing?jump(cur+1):load(cur+1);
+$('#play').onclick=toggle;$('#fab').onclick=toggle;$('#prev').onclick=()=>jump(cur-1);$('#next').onclick=()=>jump(cur+1);
 load(0);
 
-/* ---------- GIFT INTRO ---------- */
-function openGift(music){
-  const g=$('#gift');if(g.classList.contains('open'))return;
-  g.classList.add('open');if(music)play();
-  burst(innerWidth/2,innerHeight*.42,60);
-  setTimeout(()=>{g.classList.add('gone');body.classList.add('go')},RM?0:750);
-}
-$('#giftBtn').onclick=()=>openGift(true);
-$('#quietBtn').onclick=()=>openGift(false);
+/* ---------- gift intro ---------- */
+function openGift(music){const g=$('#gift');if(g.classList.contains('open'))return;g.classList.add('open');if(music)play();
+  burst(innerWidth/2,innerHeight*.42,60);setTimeout(()=>{g.classList.add('gone');body.classList.add('go')},RM?0:750)}
+$('#giftBtn').onclick=()=>openGift(true);$('#quietBtn').onclick=()=>openGift(false);
 
-/* ---------- COUNTDOWN ---------- */
-const target=new Date('2026-12-05T18:00:00-05:00').getTime();
-const last={};
+/* ---------- countdown ---------- */
+const target=new Date('2026-12-05T18:00:00-05:00').getTime(),last={};
 function setT(id,val){const el=$('#'+id);if(last[id]!==val){last[id]=val;el.textContent=val;if(!RM){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip')}}}
-function count(){
-  let ms=target-Date.now();
-  if(ms<=0){
-    $('#count').style.display='none';
-    $('#countnote').textContent=ms>-12*3600e3?"🍻 IT'S CRAWL TIME! Get to Amici's!":"That was legendary. Same time next year? 🎄";return;
-  }
+function count(){const ms=target-Date.now();
+  if(ms<=0){$('#count').style.display='none';$('#countnote').textContent=ms>-12*3600e3?"🍻 IT'S CRAWL TIME! Get to Amici's!":'That was legendary. Same time next year? 🎄';return}
   const s=Math.floor(ms/1e3),p=n=>String(n).padStart(2,'0');
-  setT('cd',String(Math.floor(s/86400)));setT('ch',p(Math.floor(s/3600)%24));setT('cm',p(Math.floor(s/60)%60));setT('cs',p(s%60));
-}
+  setT('cd',String(Math.floor(s/86400)));setT('ch',p(Math.floor(s/3600)%24));setT('cm',p(Math.floor(s/60)%60));setT('cs',p(s%60))}
 count();setInterval(count,1000);
 
-/* ---------- ROUTE MAP ---------- */
-const trail=$('#trail'),L=trail.getTotalLength(),names=["Amici's",'Brew Garden',"Johnny J's"],fr=[0,.5,1];
-$('#stars').innerHTML=Array.from({length:40},(_,i)=>`<circle cx="${(i*137)%600}" cy="${(i*53)%130}" r="${i%3?0.8:1.5}" opacity="${.3+(i%5)/8}"/>`).join('');
-$('#pins').innerHTML=fr.map((f,i)=>{const p=trail.getPointAtLength(f*L),ly=i===1?-24:30;
-  return `<g class="pin" data-s="${i}" transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})"><circle class="halo" r="12" fill="none" stroke="#f4ca72" stroke-width="3"/><circle r="12" fill="${i===1?'#f4ca72':'#b52e38'}" stroke="#fff8e9" stroke-width="3"/><text y="5" text-anchor="middle" fill="${i===1?'#17352b':'#fff'}" style="stroke:none;font-size:13px">${i+1}</text><text y="${ly}" text-anchor="middle" fill="#fff8e9">${names[i]}</text></g>`}).join('');
-const sleigh=$('#sleigh');let activeStop=-1;
-function setStop(i){if(i===activeStop)return;activeStop=i;$$('.pin').forEach(p=>p.classList.toggle('on',+p.dataset.s===i));$$('.stop').forEach(p=>p.classList.toggle('on',+p.dataset.s===i))}
-const ease=x=>x<.5?4*x*x*x:1-(-2*x+2)**3/2;
-function sleighAt(time){
-  const ph=(time/1000%14)/14;let f,stop=-1;
-  if(ph<.12){f=0;stop=0}else if(ph<.45){f=.5*ease((ph-.12)/.33)}else if(ph<.57){f=.5;stop=1}else if(ph<.9){f=.5+.5*ease((ph-.57)/.33)}else{f=1;stop=2}
-  const p=trail.getPointAtLength(f*L),bob=Math.sin(time/180)*3;
-  sleigh.setAttribute('x',p.x);sleigh.setAttribute('y',p.y-24+bob);setStop(stop);
-}
-sleighAt(0);
-
-/* ---------- SWEATER METER ---------- */
+/* ---------- sweater meter ---------- */
 const V=['Mildly festive. Add tinsel immediately.','Grandma would be proud. 👵','Certified tacky. The cousins approve.','Visible from space. 🛰️','Legally a light show. PERFECT.','Blinding. Iconic. Unbeatable. 🏆'];
 $('#rate').onclick=e=>{const n=Math.floor(Math.random()*V.length),pct=45+n*11;$('#meter').style.width='0';$('#verdict').textContent='Measuring the ugliness…';
   setTimeout(()=>{$('#meter').style.width=pct+'%';$('#verdict').textContent=`${pct}% ugly — ${V[n]}`;if(n>=3){const r=e.target.getBoundingClientRect();burst(r.left+r.width/2,r.top,40)}},350)};
 
-/* ---------- DRINKS ---------- */
-$('#drinks').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)c.classList.toggle('f')});
-
-/* ---------- COPY INVITE ---------- */
-const INV="🎄 COUSINS CHRISTMAS BAR CRAWL! 🎄\nSaturday, December 5, 2026 — starting at 6:00 PM!\n1) Amici's, North Royalton\n2) Brew Garden, Strongsville\n3) Johnny J's, Strongsville\nUGLY CHRISTMAS SWEATER REQUIRED! 🧶🍻";
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('show'),2600)}
+/* ---------- share ---------- */
+const INV="🎄 AMBER'S COUSINS CHRISTMAS CRAWL! 🎄\nSaturday, December 5 — starting at 6:00 PM!\n1) Amici's, North Royalton\n2) Brew Garden, Strongsville\n3) Johnny J's, Strongsville\nUGLY CHRISTMAS SWEATER REQUIRED! 🧶🍻";
 const PAGE=location.origin+location.pathname+location.search;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('show'),2600)}
 $('#copy').onclick=async()=>{
-  if(navigator.share){try{await navigator.share({title:'Cousins Christmas Bar Crawl',text:INV,url:PAGE});return}catch(err){if(err.name==='AbortError')return}}
+  if(navigator.share){try{await navigator.share({title:"Amber's Cousins Christmas Crawl",text:INV,url:PAGE});return}catch(err){if(err.name==='AbortError')return}}
   try{await navigator.clipboard.writeText(INV+'\n'+PAGE);toast('Copied! Paste it into the family group chat 🎉')}catch(err){const b=$('#copybox');b.value=INV+'\n'+PAGE;b.style.display='block';b.focus();b.select();toast('Select and copy the text below')}};
 
-/* ---------- RSVP BY TEXT (no backend) ---------- */
+/* ---------- RSVP by text ---------- */
 const qs=new URLSearchParams(location.search);
 const TO=(qs.get('to')||'').replace(/[^\d+]/g,'');
 const HOST=(qs.get('host')||'Amber').replace(/[<>&"]/g,'').slice(0,30);
-$('#rsvpLead').textContent=`Fill this out and it texts your RSVP straight to ${HOST}. No app, no account, no sign-up.`;
+$('#rsvpLead').textContent=`Fill this out and it texts your RSVP straight to ${HOST}. No app, no account.`;
+$('#sendBtn').textContent=`💬 Text my RSVP to ${HOST}`;
 const iOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-const smsLink=body=>`sms:${TO}${iOS?'&':'?'}body=${encodeURIComponent(body)}`;
-let n=1,lastMsg='';
-const ct=$('#ct');
-$('#mn').onclick=()=>{n=Math.max(1,n-1);ct.textContent=n};
-$('#pl').onclick=()=>{n=Math.min(20,n+1);ct.textContent=n};
+const smsLink=b=>`sms:${TO}${iOS?'&':'?'}body=${encodeURIComponent(b)}`;
+let n=1,lastMsg='';const ct=$('#ct');
+$('#mn').onclick=()=>{n=Math.max(1,n-1);ct.textContent=n};$('#pl').onclick=()=>{n=Math.min(20,n+1);ct.textContent=n};
 const val=name=>($(`input[name="${name}"]:checked`)||{}).value||'';
-function send(msg,name,going){
-  lastMsg=msg;
-  try{localStorage.setItem('crawlRSVP',JSON.stringify({name,going,msg}))}catch(e){}
-  showDone(name,going);
-  location.href=smsLink(msg);
-}
-function showDone(name,going){
-  $('#rf').hidden=true;$('#done').hidden=false;
+function showDone(name,going,again){$('#rf').hidden=true;$('#done').hidden=false;
   $('#doneT').textContent=going?`You're on the list, ${name}! 🎄`:`We'll miss you, ${name}! 💚`;
-  $('#doneP').textContent=going?`Your text to ${HOST} should be open — just hit send. If it didn't open, tap below.`:`Your text to ${HOST} should be open — just hit send.`;
-  $('#ics').hidden=!going;
-  if(going){const r=$('#done').getBoundingClientRect();burst(innerWidth/2,Math.max(80,r.top+40),70)}
-}
-$('#rf').addEventListener('submit',e=>{
-  e.preventDefault();
-  const name=$('#nm').value.trim();
-  if(!name){$('#err').textContent='Add your name so we know who\'s coming!';$('#nm').focus();return}
-  $('#err').textContent='';
-  const note=$('#nt').value.trim();
-  const msg=`🎄 RSVP — Cousins Christmas Bar Crawl (Sat 12/5)\n✅ ${name} is IN${n>1?` — party of ${n}`:''}!\n📍 ${val('stops')}\n🧶 Sweater: ${val('sw')}${$('#dd').checked?'\n🧃 Volunteering as a designated driver':''}${note?`\n💬 ${note}`:''}`;
-  send(msg,name,true);
-});
-$('#no').onclick=()=>{
-  const name=$('#nm').value.trim();
-  if(!name){$('#err').textContent='Add your name first so we know who to miss!';$('#nm').focus();return}
-  send(`🎄 Cousins Christmas Bar Crawl RSVP\n😢 ${name} can't make it this year — have a cheer for me!`,name,false);
-};
+  $('#doneP').textContent=again?'Already RSVP\'d from this phone. Change it anytime.':`Your text to ${HOST} should be open — just hit send.`;
+  if(going&&!again){const r=$('#done').getBoundingClientRect();burst(innerWidth/2,Math.max(80,r.top+40),70)}}
+function send(msg,name,going){lastMsg=msg;try{localStorage.setItem('crawlRSVP',JSON.stringify({name,going,msg}))}catch(e){}showDone(name,going,false);location.href=smsLink(msg)}
+$('#rf').addEventListener('submit',e=>{e.preventDefault();const name=$('#nm').value.trim();
+  if(!name){$('#err').textContent="Add your name so we know who's coming!";$('#nm').focus();return}
+  $('#err').textContent='';const note=$('#nt').value.trim();
+  send(`🎄 RSVP — Amber's Cousins Christmas Crawl (Sat 12/5)\n✅ ${name} is IN${n>1?` — party of ${n}`:''}!\n📍 ${val('stops')}\n🧶 Sweater: ${val('sw')}${$('#dd').checked?'\n🧃 Volunteering as a designated driver':''}${note?`\n💬 ${note}`:''}`,name,true)});
+$('#no').onclick=()=>{const name=$('#nm').value.trim();if(!name){$('#err').textContent='Add your name first so we know who to miss!';$('#nm').focus();return}
+  send(`🎄 Amber's Cousins Christmas Crawl RSVP\n😢 ${name} can't make it this year — have a cheer for me!`,name,false)};
 $('#resend').onclick=()=>{if(lastMsg)location.href=smsLink(lastMsg)};
 $('#edit').onclick=()=>{$('#done').hidden=true;$('#rf').hidden=false;$('#nm').focus()};
-try{const saved=JSON.parse(localStorage.getItem('crawlRSVP')||'null');if(saved&&saved.name){lastMsg=saved.msg;$('#nm').value=saved.name;$('#rf').hidden=true;$('#done').hidden=false;$('#doneT').textContent=saved.going?`You're on the list, ${saved.name}! 🎄`:`We'll miss you, ${saved.name}! 💚`;$('#doneP').textContent='Already RSVP\'d from this phone. Change it anytime.';$('#ics').hidden=!saved.going}}catch(e){}
-const ICS=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cousins Crawl//EN','BEGIN:VEVENT','UID:cousins-crawl-2026@vincentadkins.github.io','DTSTAMP:20261122T000000Z','DTSTART:20261205T230000Z','DTEND:20261206T040000Z','SUMMARY:🎄 Cousins Christmas Bar Crawl',"LOCATION:Amici's\\, 13000 Royalton Rd\\, North Royalton\\, OH 44133","DESCRIPTION:Amici's → Brew Garden → Johnny J's. Ugly Christmas sweater REQUIRED!",'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY','DESCRIPTION:Sweater on! Crawl starts at 6','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+try{const s=JSON.parse(localStorage.getItem('crawlRSVP')||'null');if(s&&s.name){lastMsg=s.msg;$('#nm').value=s.name;showDone(s.name,s.going,true)}}catch(e){}
+const ICS=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cousins Crawl//EN','BEGIN:VEVENT','UID:cousins-crawl-2026@vincentadkins.github.io','DTSTAMP:20261122T000000Z','DTSTART:20261205T230000Z','DTEND:20261206T040000Z',"SUMMARY:🎄 Amber's Cousins Christmas Crawl","LOCATION:Amici's\\, 13000 Royalton Rd\\, North Royalton\\, OH 44133","DESCRIPTION:Amici's → Brew Garden → Johnny J's. Ugly Christmas sweater REQUIRED!",'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY','DESCRIPTION:Sweater on! Crawl starts at 6','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
 $('#ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ICS);
 
-/* ---------- REVEAL ON SCROLL ---------- */
-const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+/* ---------- reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.1});
 $$('.reveal').forEach(el=>io.observe(el));
 
-/* ---------- SNOW + SPARKLES + VISUALIZER ---------- */
-const cv=$('#fx'),cx=cv.getContext('2d'),vz=$('#viz'),vx=vz.getContext('2d');
-let W=0,H=0,DPR=1,flakes=[],sparks=[];
-function size(){DPR=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0);
-  const n=RM?40:Math.min(200,Math.round(W*H/7000));
-  flakes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,r:.6+Math.random()*2.6,s:.3+Math.random()*1.1,p:Math.random()*6.28}));
-  vz.width=vz.clientWidth*DPR;vz.height=vz.clientHeight*DPR}
-const sizeObs=new ResizeObserver(size);sizeObs.observe(body);
-const COLS=['#f4ca72','#ff4b58','#54d89a','#fff8e9','#65baff'];
-function burst(x,y,n){if(RM)return;for(let i=0;i<n;i++){const a=Math.random()*6.28,sp=2+Math.random()*6;sparks.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-2,life:1,c:COLS[i%5],g:Math.random()<.5?'✦':'❄',z:10+Math.random()*14})}}
-addEventListener('pointerdown',e=>{if(!e.target.closest('button,a,textarea'))burst(e.clientX,e.clientY,14)});
+/* ---------- snow + sparkles + beat ---------- */
+const cv=$('#fx'),cx=cv.getContext('2d');let W=0,H=0,flakes=[],sparks=[];
+function size(){const D=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;cx.setTransform(D,0,0,D,0,0);
+  const k=RM?30:Math.min(160,Math.round(W*H/7500));flakes=Array.from({length:k},()=>({x:Math.random()*W,y:Math.random()*H,r:.6+Math.random()*2.4,s:.3+Math.random(),p:Math.random()*6.28}))}
+size();addEventListener('resize',size);
+const COLS=['#F2C467','#FF4B58','#54D89A','#FFF7E8','#65BAFF'];
+function burst(x,y,k){if(RM)return;for(let i=0;i<k;i++){const a=Math.random()*6.28,sp=2+Math.random()*6;sparks.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-2,life:1,c:COLS[i%5],g:Math.random()<.5?'✦':'❄',z:10+Math.random()*14})}}
+addEventListener('pointerdown',e=>{if(!e.target.closest('button,a,input,textarea,label'))burst(e.clientX,e.clientY,14)});
 let beat=0;
-function frame(time){
-  cx.clearRect(0,0,W,H);
-  const wind=Math.sin(time/4000)*.6+beat*1.5;
-  cx.fillStyle='rgba(255,255,255,.85)';cx.beginPath();
-  for(const f of flakes){f.y+=f.s*(1+beat*.8);f.x+=wind*f.r*.3+Math.sin(time/1000+f.p)*.3;
-    if(f.y>H+5){f.y=-5;f.x=Math.random()*W}if(f.x>W+5)f.x=-5;if(f.x<-5)f.x=W+5;
-    cx.moveTo(f.x+f.r,f.y);cx.arc(f.x,f.y,f.r,0,6.283)}
+function frame(time){cx.clearRect(0,0,W,H);const wind=Math.sin(time/4000)*.6+beat*1.5;
+  cx.fillStyle='rgba(255,255,255,.8)';cx.beginPath();
+  for(const f of flakes){f.y+=f.s*(1+beat*.8);f.x+=wind*f.r*.3+Math.sin(time/1000+f.p)*.3;if(f.y>H+5){f.y=-5;f.x=Math.random()*W}if(f.x>W+5)f.x=-5;if(f.x<-5)f.x=W+5;cx.moveTo(f.x+f.r,f.y);cx.arc(f.x,f.y,f.r,0,6.283)}
   cx.fill();
-  for(let i=sparks.length-1;i>=0;i--){const s=sparks[i];s.x+=s.vx;s.y+=s.vy;s.vy+=.18;s.vx*=.98;s.life-=.018;
-    if(s.life<=0){sparks.splice(i,1);continue}
+  for(let i=sparks.length-1;i>=0;i--){const s=sparks[i];s.x+=s.vx;s.y+=s.vy;s.vy+=.18;s.vx*=.98;s.life-=.018;if(s.life<=0){sparks.splice(i,1);continue}
     cx.globalAlpha=s.life;cx.fillStyle=s.c;cx.font=`${s.z}px sans-serif`;cx.fillText(s.g,s.x,s.y)}
   cx.globalAlpha=1;
-  const vw=vz.width,vh=vz.height;vx.clearRect(0,0,vw,vh);
-  const bars=32,bw=vw/bars;
-  if(an&&playing){an.getByteFrequencyData(fft);let sum=0;for(let i=0;i<8;i++)sum+=fft[i];beat=beat*.8+Math.max(0,sum/8/255-.35)*1.6*.2}else beat*=.9;
-  root.style.setProperty('--beat',beat.toFixed(3));
-  for(let i=0;i<bars;i++){const val=an&&playing?fft[Math.min(fft.length-1,i+1)]/255:.05+.03*Math.sin(time/600+i);
-    const h=Math.max(2*DPR,val*vh);vx.fillStyle=i%3===0?'#ff4b58':i%3===1?'#f4ca72':'#54d89a';
-    vx.fillRect(i*bw+bw*.15,vh-h,bw*.7,h)}
-  if(!RM)sleighAt(time);
-  requestAnimationFrame(frame);
-}
+  if(an&&playing){an.getByteFrequencyData(fft);let sum=0;for(let i=0;i<8;i++)sum+=fft[i];beat=beat*.8+Math.max(0,sum/8/255-.35)*.32}else beat*=.9;
+  root.style.setProperty('--beat',beat.toFixed(3));requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
 }
 </script>
